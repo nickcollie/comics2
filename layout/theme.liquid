@@ -1,0 +1,319 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {{ content_for_header }}
+
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
+
+<style>
+  /*https://fontbundles.net/alit-design/2268291-komigo-comic-font*/
+  @font-face {
+    font-family: "comic";
+    src: url("assets/comic.woff") format('woff');
+  }
+</style>
+
+
+
+    {{ settings.colors_text.red }}
+    {% style %}
+       @font-face {
+        font-family: Futura;
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: url("/fonts/futura/futura_n4.df36ce3d9db534a4d7947f4aa825495ed740e410.woff2?h1=bG91bmdlZmx5LmZvcmJpZGRlbnBsYW5ldC5jby51aw&hmac=1c558f1e6333b6cdb2f35d05285ce18b4e14d0e652158d1d20871bb98af26795") format("woff2"),
+             url("/fonts/futura/futura_n4.6bce24beb4ba1ff4ddeb20f7cd6e2fa513a3d6ec.woff?h1=bG91bmdlZmx5LmZvcmJpZGRlbnBsYW5ldC5jby51aw&hmac=340ab9079090c530f39f2892e1ca815773e0773a3a5cf76163e68867c0799f7b") format("woff");
+      }
+
+      :root {
+
+
+        --fp-yellow: #fae802;
+
+
+        --font-body-scale: 1;
+        --font-heading-scale: 1;
+        --color-base-text: white;
+        --color-shadow: black;
+        --color-base-background-1: black;
+        --color-base-background-2: black;
+        --color-base-solid-button-labels: #fae802 ;
+        --color-base-outline-button-labels: #fae802;
+        --color-base-accent-1: #fae802;
+        --color-base-accent-2: #fae802;
+        --payment-terms-background-color: #333;
+
+        --gradient-base-background-1: transparent;
+        --gradient-base-background-2: transparent;
+        --gradient-base-accent-1: #333;
+        --gradient-base-accent-2: #333;
+
+        --media-padding: {{ settings.media_padding }}px;
+        --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
+        --media-border-width: {{ settings.media_border_thickness }}px;
+        --media-radius: {{ settings.media_radius }}px;
+        --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
+        --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
+        --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
+        --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
+        --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
+
+        --page-width: 1500px;
+        --page-width-margin: 0;
+
+        --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
+        --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
+        --product-card-text-alignment: {{ settings.card_text_alignment }};
+        --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
+        --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
+        --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
+        --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+        --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
+
+        --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
+        --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
+        --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
+        --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
+        --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
+        --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
+        --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+        --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
+
+        --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
+        --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
+        --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
+        --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
+        --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
+        --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
+        --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+        --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
+
+        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
+
+        --popup-border-width: {{ settings.popup_border_thickness }}px;
+        --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
+        --popup-corner-radius: {{ settings.popup_corner_radius }}px;
+        --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
+        --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
+        --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
+        --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
+
+        --drawer-border-width: {{ settings.drawer_border_thickness }}px;
+        --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
+        --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
+        --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
+        --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
+        --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
+
+        --spacing-sections-desktop: 8px;
+        --spacing-sections-mobile: 8px;
+        --grid-desktop-vertical-spacing: 8px;
+        --grid-desktop-horizontal-spacing: 8px;
+        --grid-mobile-vertical-spacing: 4px;
+        --grid-mobile-horizontal-spacing: 4px;
+
+        --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
+        --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
+        --text-boxes-radius: {{ settings.text_boxes_radius }}px;
+        --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
+        --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
+        --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
+        --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
+
+        --buttons-radius: {{ settings.buttons_radius }}px;
+        --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
+        --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;
+        --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
+        --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
+        --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
+        --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
+        --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
+        --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
+
+        --inputs-radius: {{ settings.inputs_radius }}px;
+        --inputs-border-width: {{ settings.inputs_border_thickness }}px;
+        --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
+        --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
+        --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
+        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
+        --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
+        --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
+        --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
+
+        --variant-pills-radius: {{ settings.variant_pills_radius }}px;
+        --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
+        --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
+        --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
+        --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
+        --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
+        --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-size: calc(var(--font-body-scale) * 62.5%);
+        height: 100%;
+      }
+
+      body {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 100%;
+        min-height: 100%;
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 0.06rem;
+        line-height: 1.2em;
+        font-family: Assistant;
+        font-weight: 500;
+      }
+
+      @media screen and (min-width: 750px) {
+        body {
+          font-size: 1.6rem;
+        }
+      }
+    {% endstyle %}
+
+
+
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+
+
+
+    {%- if settings.predictive_search_enabled -%}
+      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
+    {%- endif -%}
+
+    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    if (Shopify.designMode) {
+      document.documentElement.classList.add('shopify-design-mode');
+    }
+    </script>
+
+    {{ '_fp.css' | asset_url | stylesheet_tag }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js" defer="defer"></script>
+    <script src="{{ '_fp.js' | asset_url }}" defer="defer"></script>
+
+    {{ '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' | stylesheet_tag }}
+  </head>
+
+  <body>
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+      {{ "accessibility.skip_to_text" | t }}
+    </a>
+
+
+
+    {%- render '_fp_hamburger' -%}
+    
+    {%- render '_fp_header_icons' -%}
+
+
+    {%- if settings.cart_type == 'drawer' -%}
+      {%- render 'cart-drawer' -%}
+    {%- endif -%}
+
+    {% section 'off-canvas-left' %}
+
+    {% section 'announcement-bar' %}
+
+    <div class="second_logo"><a class="neonText" href="/">Comics</a></div>
+
+    {% section 'header' %}
+
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+
+      {{ content_for_layout }}
+    </main>
+
+    {% section 'footer' %}
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
+    </ul>
+
+    <script>
+      window.shopUrl = '{{ request.origin }}';
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}'
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
+      }
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
+      }
+
+      window.accessibilityStrings = {
+        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+      }
+    </script>
+
+    {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<div class="inner">
+
+  <div id="left_closer_holder">
+  
+    <span id="left_closer" onclick="closeNavLeft()">
+      {% render 'icon-close' %}
+    </span>
+  </div>
+
+
+
+
+  <ul>
+    {% for link in linklists.leftoffcanvas.links %}
+      <li>
+        <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
+          {{ link.title }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul> 
+
+
+  <ul>
+    {% for product in collections.in-stock.products %}
+      <li>
+        <a href="{{ product.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
+          {{ product.title }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Off Canvas Left",
+  "class": "section-off-canvas-left",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu to Display"
+    }
+    
+  ]
+}
+{% endschema %}
