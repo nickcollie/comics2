@@ -6,16 +6,20 @@ html{
 
 body{
   background:transparent;
-  background:url('https://forbiddenplanet.uk/loungefly/jack5.png');
-  background-size: cover;
+  background:url('https://forbiddenplanet.uk/loungefly/jack4.png');
   background-repeat:no-repeat;
-  background-attachment: fixed;
   background-position: top center;
 }
 
 #MainContent{
 	padding-top:30px;
+	width:100%;
+	max-width:1500px;
+	background:black;
+	margin:0 auto;
 }
+
+
 
 
 .page-width,
@@ -591,3 +595,12 @@ cart-items,
 
 
 
+.second_logo,
+#fp_header_scroll,
+.announcement-bar{
+	width:100%;
+	max-width:1500px;
+	background:black!important;
+	margin:0 auto;
+
+}
