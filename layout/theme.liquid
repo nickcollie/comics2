@@ -267,10 +267,12 @@
 
     {% section 'off-canvas-left' %}
 
+<div id="blackout">   
+
     {% section 'announcement-bar' %}
 
-    <!---<div class="second_logo"><a class="neonText" href="/">Comics</a></div>--->
-    <div class="second_logo"><a href="/"><img src="https://forbiddenplanet.uk/loungefly/loungeflyWhite.png"/></a></div>
+    <div class="second_logo"><a class="neonText" href="/">Comics</a></div>
+
 
     {% section 'header' %}
 
@@ -319,5 +321,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+</div>
   </body>
 </html>

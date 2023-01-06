@@ -4,11 +4,18 @@ html{
 
 body{
   background:transparent;
-  background:url('https://forbiddenplanet.uk/loungefly/jack5.png');
-  background-size: cover;
-  background-repeat:no-repeat;
+  background:url('https://forbiddenplanet.uk/tt2.png');
+  background-repeat:repeat;
   background-attachment: fixed;
-  background-position: top center;
+  background-position: top 40%;
+}
+
+#blackout{
+	max-width:1500px;
+	width:100%;
+	margin:0 auto;
+	background:black;
+
 }
 
 #MainContent{
