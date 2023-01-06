@@ -60,3 +60,13 @@
   ]
 }
 {% endschema %}
+<script class="managecomics-data">
+  {% if customer %}
+  var customerSpan = document.createElement("span");
+  customerSpan.id = "customer-id";
+  customerSpan.style = "display: none;";
+	customerSpan.innerHTML = {{ customer.id }};
+	document.body.appendChild(customerSpan);
+  {% endif %}
+  </script><div id="managecomics-content"></div>
+  

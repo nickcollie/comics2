@@ -192,3 +192,13 @@
   ]
 }
 {% endschema %}
+<script class="managecomics-data">
+  var loginForm = document.getElementById("customer_login");
+  var prev = document.referrer;
+  var path = prev.indexOf("managecomics") === -1 ? "/account" : prev;
+  var input = document.createElement("input");
+  input.type = "hidden";
+  input.name = "checkout_url";
+  input.value = path;
+  loginForm.appendChild(input);
+</script>

@@ -1,3 +1,16 @@
+a,
+a:visited{
+  color:white;
+  text-decoration:none;
+}
+a:hover{
+  color:var(--fp-yellow);
+}
+
+.mc-current-nav{
+  color:var(--fp-yellow);
+}
+  
 /* ----------- Second Logo */
 #fp_logo{
 	
@@ -8,13 +21,19 @@
 }
 
 .second_logo a{
-	font-size:	clamp(30px, 20vw, 130px);
+	font-size:	clamp(30px, 20vw, 110px);
 
 	line-height:1em;
 	text-decoration:none;
 	color:white;
   	font-family: 'comic', cursive;
+  font-weight:normal;
 
+}
+
+.second_logo a:hover{
+  font-weight:normal;
+  color:var(--fp-yellow);
 }
 
 .neonText {
@@ -44,3 +63,81 @@
 	letter-spacing:2px;
 	font-family: 'comic', cursive;
 }
+
+#MainContent{
+  margin-top:-60px;
+}
+
+.main-page-title{
+  display:none;
+}
+
+.mc-container{
+  max-width:1500px;
+}
+
+
+
+
+/* ----------- Structure */
+
+
+#managecomics-content{
+  position:relative;
+  padding-top:30px;
+}
+
+.mc-row:nth-child(1){
+  border-bottom:1px solid white;
+  padding-bottom:10px;
+}
+
+.mc-row:nth-child(2){
+  display:none;
+}
+
+.mc-menu-niccol{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+.mc-menu-niccol a{
+  display:inline-block;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 750px) {
+
+  .mc-menu-niccol{
+    display:none;
+  }
+
+}
+
+#fp_logo {
+    padding-top: 0!important;
+}
+
+
+
+/* ----------- Home */
+.mc-page-header h1{
+	letter-spacing:2px;
+	font-family: 'comic', cursive!important; 
+}
+
+.mc-publisher-box{
+  transition: filter 1s;
+  border:1px solid white;
+  background:black;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+
+.mc-publisher-box:hover{
+  
+  filter: invert(100%);
+}
+      

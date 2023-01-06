@@ -2200,3 +2200,49 @@
   ]
 }
 {% endschema %}
+
+
+<div class="managecomics-data">
+
+  {%- assign managecomicsId = product.metafields.global.gf_id -%}
+  {%- assign managecomicsSeries = product.metafields.global.gf_series -%}
+  <script>
+    function managecomisLink() {
+      var link = document.getElementById("managecomics-link").href;
+      window.location.href = link;
+    }
+
+    {% if managecomicsSeries != null and managecomicsSeries != '' and managecomicsSeries != '0' %}
+      var el = document.querySelector('.mc_fpcomics');
+      if (el) {
+        el.insertAdjacentHTML('afterend', '<a href="/pages/managecomics?products?id={{ managecomicsId }}" id="managecomics-link" onclick="event.preventDefault();managecomisLink();">  <button id="managecomics-button">Subscribe to Series</button></a>');
+      }
+    {% endif %}
+  </script></div>
+<style class=\"managecomics-data\">
+    #managecomics-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 7px 17px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border-style: solid;
+      border-color: #000000 !important;
+      border-width: 1.5px;
+      font-size: 14px;
+      background: #ffffff !important;
+      color: #000000 !important;
+      text-decoration: none;
+      font-weight: bold;
+      width:100% !important;
+    }
+    #managecomics-button:hover {
+      background: #ffffff !important;
+      color: #000000 !important;
+      border-color: #000000 !important;
+    }
+</style>
+
+</div>
