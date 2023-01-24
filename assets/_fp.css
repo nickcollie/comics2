@@ -306,8 +306,16 @@ button:hover span{
 
 #fp_hamburger_fixed{
 	height:50px;
-	width:150px;
+	width:100%;
 	position:fixed;
+	z-index:20;
+	pointer-events: none; 
+	top:0;
+}
+
+#fp_hamburger_fixed div{
+	max-width:1500px;
+	margin:0 auto;
 	z-index:20;
 }
 
@@ -325,7 +333,14 @@ button:hover span{
 	position:fixed;
 	right:0;
 	z-index:10;
-	pointer-events: none; 
+	pointer-events: none;
+	top:0; 
+}
+
+#fp_icons_fixed .inner{
+	max-width:1500px;
+	margin:0 auto;
+	z-index:20;	
 }
 
 #fp_icons_fixed .header__icons{
@@ -589,10 +604,11 @@ cart-items,
 	background:rgba(0,0,0,0.8);
 }
 
-
-
-
-
+#customer_login input,
+#create_customer input{
+	background:#ccc!important;
+	color:black;
+}
 
 
 
