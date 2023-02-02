@@ -141,6 +141,12 @@ a:hover{
   filter: invert(100%);
 }
 
+
+
+/* ----------- MC MODAL */
+.mc-subscribe-btn{
+  font-size:14px;
+}
 .mc-modal-content,
 .mc-modal-content h4{
   margin-top:0;
