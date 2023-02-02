@@ -143,6 +143,7 @@ a:hover{
 
 .mc-modal-content,
 .mc-modal-content h4{
+  margin-top:0;
   font-size:16px;
   color:black;
 }
