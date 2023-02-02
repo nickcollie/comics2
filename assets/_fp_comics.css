@@ -159,3 +159,7 @@ a:hover{
   font-size:10px!important;
   text-transform:uppercase;
 }
+
+.mc-modal-content hr{
+  display:none;
+}
