@@ -155,7 +155,7 @@ a:hover{
   color:black;
 }
 
-.mc-fill-with label{
+.mc-modal-content .mc-fill-with label{
   font-size:10px!important;
   text-transform:uppercase;
 }
