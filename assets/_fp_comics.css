@@ -145,13 +145,17 @@ a:hover{
 
 /* ----------- MC MODAL */
 .mc-modal-content .mc-subscribe-btn{
-  background:var(--fp-yellow);
   font-size:14px!important;
 }
+
 .mc-modal-content,
 .mc-modal-content h4{
   margin-top:0;
   font-size:16px;
   color:black;
 }
-      
+
+.mc-fill-with label{
+  font-size:12px;
+  text-transform:uppercase;
+}
