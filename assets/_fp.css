@@ -129,16 +129,7 @@ button{
 
 
 
-button::before{
-	content: '';
-	display:block;
-	background:var(--fp-yellow);
-	width:100%;
-	height: 100%;
-	margin-left:-100%;
-	transition: margin 0.5s;
-	opacity:1!important;
-}
+
 
 .search-modal__close-button::before, 
 .search-modal__content button::before,
