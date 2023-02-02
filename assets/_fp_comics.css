@@ -145,8 +145,7 @@ a:hover{
 
 /* ----------- MC MODAL */
 .mc-modal-content .mc-subscribe-btn{
-  display:block!important;
-  width:100%;
+  background:var(--fp-yellow);
   font-size:14px!important;
 }
 .mc-modal-content,
