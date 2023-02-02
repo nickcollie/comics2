@@ -92,8 +92,8 @@ a:hover{
   padding-bottom:10px;
 }
 
-.mc-row:nth-child(2){
-
+.mc-page-header{
+    display:none;
 }
 
 .mc-menu-niccol{
