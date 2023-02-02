@@ -128,9 +128,10 @@ button{
 }
 
 
-
-button::before{
-	content: '';
+.cart__checkout-button::before,
+.product-form__submit::before,
+.quick-add__submit::before{
+	content: ''!important;
 	display:block;
 	background:var(--fp-yellow);
 	width:100%;
@@ -140,15 +141,7 @@ button::before{
 	opacity:1!important;
 }
 
-.search-modal__close-button::before, 
-.search-modal__content button::before,
-button.quantity__button::before{
-	display:none;
-	background:transparent;
-	margin-left:0%;
-	width:0;
-	height:0;
-}
+
 
 
 button span{
