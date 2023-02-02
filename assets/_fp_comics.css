@@ -156,6 +156,6 @@ a:hover{
 }
 
 .mc-fill-with label{
-  font-size:12px;
+  font-size:10px!important;
   text-transform:uppercase;
 }
