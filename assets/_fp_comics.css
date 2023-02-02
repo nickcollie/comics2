@@ -141,7 +141,8 @@ a:hover{
   filter: invert(100%);
 }
 
-.mc-modal-content{
+.mc-modal-content,
+.mc-modal-content h4{
   color:black;
 }
       
