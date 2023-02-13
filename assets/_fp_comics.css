@@ -20,6 +20,10 @@ a:hover{
     border-radius: 5px;
   margin-right:3px;
 }
+
+.mc-pagination a.active {
+    background-color: var(--fp-yellow);
+}
   
 /* ----------- Second Logo */
 #fp_logo{
