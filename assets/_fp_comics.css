@@ -22,6 +22,7 @@ a:hover{
 }
 
 .mc-pagination a.active {
+  color:black!important;
     background-color: var(--fp-yellow)!important;
 }
   
