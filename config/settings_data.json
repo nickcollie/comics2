@@ -1,5 +1,19 @@
 {
   "current": {
+    "social_twitter_link": "https:\/\/twitter.com\/fpinternational",
+    "social_facebook_link": "https:\/\/www.facebook.com\/forbiddenplanetint",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/FPinternational\/",
+    "social_tiktok_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCF7ARf5j5OX-8JbD_N6ak7Q",
+    "social_vimeo_link": "",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "currency_code_enabled": true,
+    "cart_type": "drawer",
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -89,20 +103,6 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
-    "social_twitter_link": "https:\/\/twitter.com\/fpinternational",
-    "social_facebook_link": "https:\/\/www.facebook.com\/forbiddenplanetint",
-    "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/FPinternational\/",
-    "social_tiktok_link": "",
-    "social_tumblr_link": "",
-    "social_snapchat_link": "",
-    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCF7ARf5j5OX-8JbD_N6ak7Q",
-    "social_vimeo_link": "",
-    "predictive_search_enabled": true,
-    "predictive_search_show_vendor": false,
-    "predictive_search_show_price": false,
-    "currency_code_enabled": true,
-    "cart_type": "drawer",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -110,7 +110,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store",
+              "text": "",
               "link": ""
             }
           }
